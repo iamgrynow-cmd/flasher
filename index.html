@@ -7,7 +7,6 @@
     <!-- SEO Meta Tags -->
     <title>Flash USDT - Premium On-Chain Asset Solutions</title>
     <meta name="description" content="Professional Flash USDT infrastructure for rapid confirmations across TRC20, BEP20, and ERC20 networks. Enterprise-grade security and speed.">
-    <meta name="keywords" content="Flash USDT, Crypto Assets, TRC20, BEP20, ERC20, Crypto Infrastructure, Fast USDT">
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -81,13 +80,34 @@
             border: 1px solid rgba(59, 130, 246, 0.3); padding: 16px; border-radius: 16px;
         }
 
-        .success-screen { display: none; text-align: center; padding: 40px 0; }
+        .success-screen { display: none; text-align: center; padding: 20px 0; }
         
         .info-content h2 { color: #3b82f6; font-weight: bold; font-size: 1rem; margin-top: 1.5rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
         .info-content p { color: #94a3b8; font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem; }
         
         .footer-link { color: #64748b; font-size: 0.75rem; transition: color 0.2s; cursor: pointer; }
         .footer-link:hover { color: #3b82f6; }
+
+        /* Custom Success Styling based on screenshot */
+        .success-box {
+            background: rgba(15, 23, 42, 0.4);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: left;
+        }
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #cbd5e1;
+        }
+        .step-icon {
+            width: 18px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -102,7 +122,7 @@
             <nav class="hidden md:flex items-center space-x-8">
                 <a href="#pricing" class="text-slate-400 hover:text-white transition">Packages</a>
                 <a href="#about" class="text-slate-400 hover:text-white transition">Network Details</a>
-                <a href="https://t.me/yourtelegram" target="_blank" class="text-slate-400 hover:text-white transition">Live Support</a>
+                <a href="https://t.me/Official_Flash_USDT" target="_blank" class="text-slate-400 hover:text-white transition">Live Support</a>
                 <a href="#pricing" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Buy Now</a>
             </nav>
             <button class="md:hidden text-white" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
@@ -129,8 +149,8 @@
                 <p>All transactions are handled through encrypted channels. We prioritize anonymity and transactional integrity across all supported mainnets.</p>
                 
                 <div class="pt-4 border-t border-slate-700/50 mt-4">
-                    <a href="https://t.me/yourtelegram" target="_blank" class="flex items-center text-[11px] text-blue-400 hover:underline">
-                        <i class="fab fa-telegram-plane mr-2"></i> Contact Global Support
+                    <a href="https://t.me/Official_Flash_USDT" target="_blank" class="flex items-center text-[11px] text-blue-400 hover:underline">
+                        <i class="fab fa-telegram-plane mr-2"></i> Contact @Official_Flash_USDT
                     </a>
                 </div>
             </div>
@@ -161,9 +181,13 @@
                 <article class="crypto-card p-6 rounded-2xl flex flex-col border-t-4 border-t-slate-500">
                     <h4 class="font-bold text-lg text-slate-200">Starter Node</h4>
                     <div class="text-3xl font-bold my-4">$29</div>
-                    <ul class="text-xs text-slate-400 space-y-3 mb-8 flex-grow">
+                    <ul class="text-[11px] text-slate-400 space-y-3 mb-8 flex-grow">
                         <li><i class="fas fa-check text-blue-500 mr-2"></i> 3,999 Flash USDT</li>
                         <li><i class="fas fa-check text-blue-500 mr-2"></i> TRC20 Protocol</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Tradable Flash USDT</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Swappable Flash USDT</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Instant Transfer</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> P2P Transferable</li>
                         <li><i class="fas fa-clock text-blue-500 mr-2"></i> 60 Days Validity</li>
                     </ul>
                     <button onclick="openPaymentModal(29, 3999)" class="w-full py-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 font-bold hover:bg-blue-600 hover:text-white transition uppercase text-[10px] tracking-widest">Select Plan</button>
@@ -173,9 +197,13 @@
                     <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase">Recommended</span>
                     <h4 class="font-bold text-lg text-white">Advanced Node</h4>
                     <div class="text-3xl font-bold my-4">$59</div>
-                    <ul class="text-xs text-slate-300 space-y-3 mb-8 flex-grow">
+                    <ul class="text-[11px] text-slate-300 space-y-3 mb-8 flex-grow">
                         <li><i class="fas fa-check text-blue-500 mr-2"></i> 10,000 Flash USDT</li>
                         <li><i class="fas fa-check text-blue-500 mr-2"></i> TRC20 Protocol</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Tradable Flash USDT</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Swappable Flash USDT</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Instant Transfer</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> P2P Transferable</li>
                         <li><i class="fas fa-clock text-blue-500 mr-2"></i> 180 Days Validity</li>
                     </ul>
                     <button onclick="openPaymentModal(59, 10000)" class="w-full py-3 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition uppercase text-[10px] tracking-widest">Select Plan</button>
@@ -184,9 +212,13 @@
                 <article class="crypto-card p-6 rounded-2xl flex flex-col border-t-4 border-t-purple-500">
                     <h4 class="font-bold text-lg text-slate-200">Elite Enterprise</h4>
                     <div class="text-3xl font-bold my-4">$111</div>
-                    <ul class="text-xs text-slate-400 space-y-3 mb-8 flex-grow">
+                    <ul class="text-[11px] text-slate-400 space-y-3 mb-8 flex-grow">
                         <li><i class="fas fa-check text-blue-500 mr-2"></i> 21,000 Flash USDT</li>
                         <li><i class="fas fa-check text-blue-500 mr-2"></i> TRC20 / BEP20 / ERC20</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Tradable Flash USDT</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Swappable Flash USDT</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> Instant Transfer</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i> P2P Transferable</li>
                         <li><i class="fas fa-infinity text-blue-500 mr-2"></i> 365 Days Validity</li>
                     </ul>
                     <button onclick="openPaymentModal(111, 21000)" class="w-full py-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 font-bold hover:bg-blue-600 hover:text-white transition uppercase text-[10px] tracking-widest">Select Plan</button>
@@ -209,7 +241,7 @@
                             <span>How long does the activation take?</span>
                             <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition"></i>
                         </summary>
-                        <p class="text-xs text-slate-400 mt-2">Activation is typically completed within 5-15 minutes of manual TXID verification by our team.</p>
+                        <p class="text-xs text-slate-400 mt-2">Activation is typically completed within 5-15 minutes of manual TXID verification by our team via Telegram.</p>
                     </details>
                 </div>
             </section>
@@ -233,9 +265,9 @@
 
             <p class="text-xs text-slate-500 mb-6 uppercase tracking-widest">Premium Blockchain Infrastructure &copy; 2025</p>
             <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://t.me/yourtelegram" target="_blank" class="text-slate-500 hover:text-blue-400 text-2xl transition"><i class="fab fa-telegram"></i></a>
+                <a href="https://t.me/Official_Flash_USDT" target="_blank" class="text-slate-500 hover:text-blue-400 text-2xl transition"><i class="fab fa-telegram"></i></a>
             </div>
-            <p class="text-[11px] text-slate-600">Trading digital assets involves risk. Ensure network compatibility before deployment.</p>
+            <p class="text-[11px] text-slate-600">Support Username: @Official_Flash_USDT</p>
         </div>
     </footer>
 
@@ -265,7 +297,7 @@
                         </div>
                         <!-- ERC20 -->
                         <div class="payment-pill">
-                            <span class="w-10 h-6 bg-blue-500/20 rounded flex items-center justify-center text-blue-500 font-bold text-[9px]">ERC20</span>
+                            <span class="w-10 h-6 bg-purple-500/20 rounded flex items-center justify-center text-purple-500 font-bold text-[9px]">ERC20</span>
                             <div class="flex-grow overflow-hidden"><div class="text-[10px] font-mono text-slate-200 truncate" id="erc-addr">0x278B0E915245d8816Ec6DdBd3742660e8B8d0351</div></div>
                             <button onclick="copyText('erc-addr')" class="copy-btn-mini">Copy</button>
                         </div>
@@ -276,8 +308,8 @@
                     <label class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-4 block">2. Confirmation Details</label>
                     <div class="space-y-4">
                         <div class="grid grid-cols-2 gap-3">
-                            <input type="text" id="userName" class="form-input" placeholder="Telegram Username (Optional)">
-                            <input type="email" id="userEmail" class="form-input" placeholder="Email Address (Optional)">
+                            <input type="text" id="userName" class="form-input" placeholder="Telegram Username">
+                            <input type="email" id="userEmail" class="form-input" placeholder="Email (Optional)">
                         </div>
                         
                         <div class="upload-box" onclick="document.getElementById('fileInput').click()">
@@ -287,7 +319,7 @@
                         </div>
 
                         <div class="grid grid-cols-2 gap-3">
-                            <input type="text" id="txidInput" class="form-input" placeholder="Transaction ID (TXID)">
+                            <input type="text" id="txidInput" class="form-input" placeholder="TXID Hash">
                             <select id="networkSelect" class="form-input bg-slate-900">
                                 <option>TRC20</option>
                                 <option>BEP20</option>
@@ -300,7 +332,7 @@
                         <div class="bg-blue-600/10 border border-blue-500/20 rounded-xl p-4 flex justify-between items-center">
                             <div>
                                 <span class="text-[10px] text-blue-400 uppercase font-bold block">Amount Payable</span>
-                                <input type="number" id="payAmount" class="bg-transparent text-lg font-bold text-white outline-none w-16" readonly>
+                                <span class="text-lg font-bold text-white">$<span id="disp-price">0</span></span>
                             </div>
                             <div class="text-right">
                                 <span class="text-[10px] text-slate-500 block">Flash Quota:</span>
@@ -312,43 +344,36 @@
                 </div>
             </div>
 
-            <!-- New Professional Thank You Screen -->
             <div id="successScreen" class="success-screen">
-                <div class="w-20 h-20 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto mb-8 border border-green-500/20">
-                    <i class="fas fa-check-double text-4xl"></i>
+                <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-2xl"></i>
                 </div>
                 <h2 class="text-3xl font-bold text-white mb-4">Order Successfully Queued</h2>
-                <div class="max-w-sm mx-auto">
-                    <p class="text-sm text-slate-400 mb-8 leading-relaxed">Thank you for your order. Our automated verification engine is processing your transaction. This typically takes 5-15 minutes.</p>
+                <p class="text-sm text-slate-400 mb-6 px-4">Thank you for your order. Our automated verification engine is processing your transaction. This typically takes 5-15 minutes.</p>
+                
+                <div class="success-box">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-4">Next Steps:</p>
+                    <div class="step-item">
+                        <div class="step-icon text-blue-400"><i class="fas fa-circle-notch fa-spin"></i></div>
+                        <span>Mempool confirmation check in progress.</span>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon text-blue-500"><i class="fas fa-robot"></i></div>
+                        <span>Deployment of node activation keys.</span>
+                    </div>
+                    <div class="step-item">
+                        <div class="step-icon text-blue-400"><i class="fab fa-telegram-plane"></i></div>
+                        <span>Updates will be sent to your provided contact.</span>
+                    </div>
                 </div>
                 
-                <div class="bg-slate-900 rounded-xl p-6 mb-8 text-left border border-slate-800">
-                    <h4 class="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-3">Next Steps:</h4>
-                    <ul class="text-xs text-slate-300 space-y-3">
-                        <li class="flex items-start"><i class="fas fa-circle-notch fa-spin text-blue-500 mt-1 mr-3"></i> <span>Mempool confirmation check in progress.</span></li>
-                        <li class="flex items-start"><i class="fas fa-robot text-blue-500 mt-1 mr-3"></i> <span>Deployment of node activation keys.</span></li>
-                        <li class="flex items-start"><i class="fab fa-telegram-plane text-blue-500 mt-1 mr-3"></i> <span>Updates will be sent to your provided contact.</span></li>
-                    </ul>
-                </div>
-
-                <div class="flex flex-col gap-3">
-                    <a href="https://t.me/yourtelegram" target="_blank" class="w-full py-3 bg-blue-600 text-white rounded-lg font-bold uppercase text-[10px] tracking-widest hover:bg-blue-700 transition">
+                <div class="space-y-4">
+                    <a href="https://t.me/Official_Flash_USDT" target="_blank" class="block w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold uppercase text-xs tracking-widest transition">
                         Open Support Channel
                     </a>
                     <button onclick="closePaymentModal()" class="text-slate-500 text-[10px] uppercase font-bold tracking-widest hover:text-white transition">Back to Main Page</button>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- Info Modal (Footer Content) -->
-    <div id="infoModal" class="modal-overlay">
-        <div class="modal-content text-left">
-            <h3 class="text-xl font-bold mb-4" id="infoTitle">---</h3>
-            <div id="infoBody" class="text-xs text-slate-400 space-y-4 leading-relaxed max-h-[60vh] overflow-y-auto pr-2">
-                <!-- Content injected here -->
-            </div>
-            <button onclick="closeInfoModal()" class="mt-6 w-full py-3 bg-slate-700 text-white rounded-lg font-bold uppercase text-[10px]">Close</button>
         </div>
     </div>
 
@@ -371,35 +396,12 @@
             document.getElementById('modalHeader').style.display = 'flex';
             document.getElementById('successScreen').style.display = 'none';
             document.getElementById('paymentModal').style.display = 'flex';
-            document.getElementById('payAmount').value = price;
+            document.getElementById('disp-price').innerText = price;
             document.getElementById('creditDisplay').innerText = limit.toLocaleString() + ' USDT';
             document.body.style.overflow = 'hidden';
         }
 
         function closePaymentModal() { document.getElementById('paymentModal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-
-        function showInfoModal(type) {
-            const title = document.getElementById('infoTitle');
-            const body = document.getElementById('infoBody');
-            
-            if(type === 'Terms') {
-                title.innerText = "Terms of Service";
-                body.innerHTML = "<p>By using Flash USDT services, you agree to comply with our usage protocols. You are responsible for ensuring your target exchange accepts Flash assets. Assets are provided as is, with full network functionality for the duration of the purchased plan.</p><p>Misuse or network manipulation will result in immediate node suspension.</p>";
-            } else if(type === 'Privacy') {
-                title.innerText = "Privacy Policy";
-                body.innerHTML = "<p>We prioritize user anonymity. No personal identifying information is permanently stored on our servers. Transaction IDs and wallet addresses are used solely for order verification and node connectivity.</p><p>We do not share any data with third-party tracking services.</p>";
-            } else if(type === 'Refund') {
-                title.innerText = "Refund Policy";
-                body.innerHTML = "<p>Due to the irreversible nature of blockchain transactions, all sales are final. We do not provide refunds once an order is submitted and verified. In case of network failure, we offer a service credit or extension of the current plan.</p>";
-            } else {
-                title.innerText = "Risk Disclaimer";
-                body.innerHTML = "<p>Trading or transferring digital assets involves significant market and technical risks. Flash USDT is a technical tool designed for speed. We are not responsible for exchange bans, account locks, or incorrect wallet entries. Always perform a small test transaction first.</p>";
-            }
-            
-            document.getElementById('infoModal').style.display = 'flex';
-        }
-
-        function closeInfoModal() { document.getElementById('infoModal').style.display = 'none'; }
 
         function copyText(id) {
             const text = document.getElementById(id).innerText;
@@ -413,11 +415,10 @@
             const wallet = document.getElementById('walletAddrInput').value;
             
             if(!fileUploaded) { showNotif("Warning", "Proof of payment required.", "red"); return; }
-            if(!txid) { showNotif("Warning", "TXID hash is required for verification.", "red"); return; }
-            if(!wallet) { showNotif("Warning", "Receiving address is mandatory.", "red"); return; }
+            if(!txid || !wallet) { showNotif("Warning", "All fields are required.", "red"); return; }
 
             const btn = document.getElementById('submitBtn');
-            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Verifying Payload...';
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Initializing Node...';
             btn.disabled = true;
             
             setTimeout(() => {
@@ -439,12 +440,14 @@
 
         document.getElementById('fileInput').onchange = function() {
             if(this.files.length > 0) {
-                document.getElementById('uploadStatus').innerText = "File Attached";
+                document.getElementById('uploadStatus').innerText = "Receipt Attached";
                 fileUploaded = true; showNotif("System", "Attachment successful", "blue");
             }
         };
 
-        function toggleMobileMenu() { showNotif("Navigation", "Please select a plan from the pricing section.", "blue"); }
+        function toggleMobileMenu() {
+            showNotif("Navigation", "Scroll down to see our packages.", "blue");
+        }
     </script>
 </body>
 </html>
