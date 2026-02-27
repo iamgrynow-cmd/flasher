@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Flash USDT - Fast & Secure On-Chain Crypto Assets</title>
+    <meta name="description" content="Professional Flash USDT infrastructure for rapid confirmations across TRC20, BEP20, and ERC20 networks. Secure, reliable, and engineered for speed.">
+    <meta name="keywords" content="Flash USDT, Crypto Assets, TRC20, BEP20, ERC20, Crypto Infrastructure, Fast USDT">
+    <meta name="author" content="Flash USDT Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Flash USDT - Professional Crypto Infrastructure">
+    <meta property="og:description" content="Secure and fast Flash USDT transfers with multi-chain support. Get started with our advanced node technology.">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono&display=swap');
+        
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .crypto-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+
+        .crypto-card:hover { border-color: #3b82f6; transform: translateY(-2px); }
+
+        .gradient-text {
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Responsive Modal */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(12px);
+            z-index: 2000; display: none; justify-content: center; align-items: center; padding: 15px;
+        }
+
+        .modal-content {
+            background: #1e293b; width: 100%; max-width: 600px;
+            border-radius: 20px; padding: 24px; position: relative;
+            border: 1px solid #334155; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            max-height: 90vh; overflow-y: auto;
+        }
+
+        .payment-pill {
+            background: #0f172a; border: 1px solid #334155; border-radius: 12px;
+            padding: 10px 14px; display: flex; align-items: center; gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .form-input {
+            background: #0f172a; border: 1px solid #334155; border-radius: 10px;
+            padding: 12px; width: 100%; color: white; font-size: 14px; outline: none;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus { border-color: #3b82f6; }
+
+        .upload-box {
+            border: 2px dashed #334155; border-radius: 12px; padding: 20px;
+            text-align: center; cursor: pointer; transition: all 0.2s;
+            background: rgba(15, 23, 42, 0.4);
+        }
+        .upload-box:hover { border-color: #3b82f6; background: rgba(59, 130, 246, 0.05); }
+
+        .copy-btn-mini {
+            background: #3b82f6; color: white; padding: 6px 12px; border-radius: 6px;
+            font-size: 12px; font-weight: 600; cursor: pointer; white-space: nowrap;
+        }
+
+        #notification {
+            position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%);
+            z-index: 3000; width: 90%; max-width: 400px;
+            display: none; background: rgba(30, 41, 59, 0.95); backdrop-filter: blur(12px);
+            border: 1px solid rgba(59, 130, 246, 0.3); padding: 16px; border-radius: 16px;
+        }
+
+        .success-screen { display: none; text-align: center; padding: 30px 0; }
+        
+        /* Mobile Specific */
+        @media (max-width: 640px) {
+            .text-4xl { font-size: 1.875rem; }
+            .p-8 { padding: 1.5rem; }
+        }
+
+        /* Generic Content Styles for Info Modals */
+        .info-content h2 { color: #3b82f6; font-weight: bold; font-size: 1.25rem; margin-top: 1.5rem; margin-bottom: 0.5rem; }
+        .info-content p { color: #94a3b8; font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem; }
+        .info-content ul { list-style-type: disc; margin-left: 1.5rem; margin-bottom: 1rem; color: #94a3b8; font-size: 0.875rem; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 py-4 px-6 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="bg-blue-600 p-2 rounded-lg" aria-hidden="true"><i class="fas fa-bolt text-white text-xl"></i></div>
+                <h1 class="text-xl md:text-2xl font-bold tracking-tight">Flash<span class="text-blue-500">USDT</span></h1>
+            </div>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#pricing" class="text-slate-400 hover:text-white transition">Pricing</a>
+                <a href="#about" class="text-slate-400 hover:text-white transition">About</a>
+                <a href="#support" class="text-slate-400 hover:text-white transition">Support</a>
+                <a href="#pricing" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Get Started</a>
+            </nav>
+            <button class="md:hidden text-white" aria-label="Menu" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row p-4 md:p-8 gap-8">
+        <!-- Sidebar -->
+        <aside class="md:w-1/3 lg:w-1/4 space-y-6">
+            <div class="crypto-card rounded-xl p-5">
+                <h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Node Statistics</h3>
+                <div class="space-y-4 text-xs font-mono text-slate-400">
+                    <div class="flex justify-between"><span>Status</span> <span class="text-green-500 font-bold">● Live</span></div>
+                    <div class="flex justify-between"><span>Latency</span> <span class="text-blue-400">14ms</span></div>
+                    <div class="flex justify-between"><span>Confirmations</span> <span class="text-purple-400">Inst-Sync</span></div>
+                </div>
+            </div>
+            
+            <div id="support-sidebar" class="crypto-card rounded-xl p-6 border-l-4 border-l-blue-500">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-10 h-10 bg-blue-500/10 rounded-full flex items-center justify-center text-blue-500">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm text-white">Live Support</h4>
+                        <p class="text-[10px] text-green-500 font-bold uppercase tracking-wider">Online 24/7</p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed mb-4">Contact our technical team for node activation and transaction verification assistance.</p>
+                <div class="space-y-3">
+                    <div class="flex items-center text-[11px] text-slate-300">
+                        <i class="fab fa-telegram text-blue-400 mr-2"></i> @FlashUSDT_Support
+                    </div>
+                    <div class="flex items-center text-[11px] text-slate-300">
+                        <i class="fas fa-envelope text-blue-400 mr-2"></i> contact@flashusdt.com
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="md:w-2/3 lg:w-3/4">
+            <section id="about" class="crypto-card rounded-2xl p-6 md:p-10 mb-8 relative overflow-hidden">
+                <div class="relative z-10">
+                    <span class="bg-blue-900/50 text-blue-400 text-[10px] font-bold px-3 py-1 rounded-full border border-blue-500/30 mb-4 inline-block uppercase tracking-wider">Enterprise Grade</span>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Fastest <span class="gradient-text">Flash USDT</span> Solutions</h2>
+                    <div class="text-slate-400 mb-8 space-y-4 text-sm md:text-base leading-relaxed max-w-2xl">
+                        <p>Our high-performance infrastructure is engineered for speed and security. Transfer digital assets to the world's leading exchanges and private wallets without any latency.</p>
+                        <p>Fully compatible with <strong>ERC20, TRC20, and BEP20</strong> networks. Every transaction is processed on-chain for maximum safety and transparency.</p>
+                    </div>
+                    <a href="#pricing" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-bold transition shadow-xl shadow-blue-600/30 w-full md:w-auto text-center">Get Started Now</a>
+                </div>
+            </section>
+
+            <!-- Pricing Section -->
+            <section id="pricing" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 scroll-mt-24">
+                <!-- Starter -->
+                <article class="crypto-card p-6 rounded-2xl flex flex-col border-t-4 border-t-slate-500">
+                    <h4 class="font-bold text-lg text-slate-200">Starter Pack</h4>
+                    <div class="text-3xl font-bold my-4">$29</div>
+                    <ul class="text-xs text-slate-400 space-y-3 mb-8 flex-grow">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 3,999 Flash USDT Daily</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> TRC20 Support</li>
+                        <li><i class="fas fa-clock text-blue-500 mr-2"></i> 7 Days Duration</li>
+                    </ul>
+                    <button onclick="openPaymentModal(29, 3999)" class="w-full py-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 font-bold hover:bg-blue-600 hover:text-white transition">Choose Plan</button>
+                </article>
+                <!-- Advanced -->
+                <article class="crypto-card p-6 rounded-2xl border-2 border-blue-500 bg-slate-800/40 flex flex-col relative">
+                    <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[10px] px-3 py-1 rounded-full font-bold uppercase">Popular</span>
+                    <h4 class="font-bold text-lg text-white">Advanced Pack</h4>
+                    <div class="text-3xl font-bold my-4">$59</div>
+                    <ul class="text-xs text-slate-300 space-y-3 mb-8 flex-grow">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 10,000 Flash USDT Daily</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Multi-Chain Support</li>
+                        <li><i class="fas fa-clock text-blue-500 mr-2"></i> 30 Days Duration</li>
+                    </ul>
+                    <button onclick="openPaymentModal(59, 10000)" class="w-full py-3 rounded-lg bg-blue-600 text-white font-bold hover:bg-blue-700 transition">Choose Plan</button>
+                </article>
+                <!-- Elite -->
+                <article class="crypto-card p-6 rounded-2xl flex flex-col border-t-4 border-t-purple-500">
+                    <h4 class="font-bold text-lg text-slate-200">Elite Lifetime</h4>
+                    <div class="text-3xl font-bold my-4">$111</div>
+                    <ul class="text-xs text-slate-400 space-y-3 mb-8 flex-grow">
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> 21,000 Flash USDT Daily</li>
+                        <li><i class="fas fa-check text-blue-500 mr-2"></i> Full Network Access</li>
+                        <li><i class="fas fa-infinity text-blue-500 mr-2"></i> 365 Days Duration</li>
+                    </ul>
+                    <button onclick="openPaymentModal(111, 21000)" class="w-full py-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 font-bold hover:bg-blue-600 hover:text-white transition">Choose Plan</button>
+                </article>
+            </section>
+        </main>
+    </div>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800 pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="bg-blue-600 p-1.5 rounded-md"><i class="fas fa-bolt text-white text-sm"></i></div>
+                        <h2 class="text-xl font-bold">Flash<span class="text-blue-500">USDT</span></h2>
+                    </div>
+                    <p class="text-xs text-slate-500 leading-relaxed mb-6">World's leading professional Flash USDT infrastructure provider. High speed, low latency, and maximum reliability.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-500 hover:text-white transition" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="text-slate-500 hover:text-white transition" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="mailto:contact@flashusdt.com" class="text-slate-500 hover:text-white transition" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sm text-white mb-6 uppercase tracking-wider">Quick Links</h5>
+                    <ul class="space-y-3 text-xs text-slate-500">
+                        <li><a href="#about" class="hover:text-blue-400 transition">About Us</a></li>
+                        <li><a href="#pricing" class="hover:text-blue-400 transition">Plans & Pricing</a></li>
+                        <li><a href="javascript:void(0)" onclick="openInfoModal('support')" class="hover:text-blue-400 transition">Support Center</a></li>
+                        <li><a href="javascript:void(0)" onclick="openInfoModal('status')" class="hover:text-blue-400 transition">System Status</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sm text-white mb-6 uppercase tracking-wider">Legal Pages</h5>
+                    <ul class="space-y-3 text-xs text-slate-500">
+                        <li><a href="javascript:void(0)" onclick="openInfoModal('privacy')" class="hover:text-blue-400 transition">Privacy Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="openInfoModal('terms')" class="hover:text-blue-400 transition">Terms of Service</a></li>
+                        <li><a href="javascript:void(0)" onclick="openInfoModal('cookie')" class="hover:text-blue-400 transition">Cookie Policy</a></li>
+                        <li><a href="javascript:void(0)" onclick="openInfoModal('disclaimer')" class="hover:text-blue-400 transition">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="font-bold text-sm text-white mb-6 uppercase tracking-wider">Newsletter</h5>
+                    <p class="text-[11px] text-slate-500 mb-4">Join for the latest updates and scheduled maintenance news.</p>
+                    <div class="flex gap-2">
+                        <input type="email" placeholder="Email" class="form-input text-xs py-2">
+                        <button class="bg-blue-600 px-3 rounded-lg" aria-label="Subscribe"><i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-[11px] text-slate-600">&copy; 2025 Flash USDT Infrastructure. All Rights Reserved.</p>
+                <div class="flex items-center space-x-4">
+                    <i class="fab fa-cc-visa text-slate-700 text-xl" title="Visa"></i>
+                    <i class="fab fa-cc-mastercard text-slate-700 text-xl" title="Mastercard"></i>
+                    <i class="fab fa-bitcoin text-slate-700 text-xl" title="Bitcoin"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal-overlay">
+        <div class="modal-content">
+            <div id="modalHeader" class="flex justify-between items-center mb-6">
+                <h3 class="text-xl font-bold text-white">Secure Payment</h3>
+                <button onclick="closePaymentModal()" class="text-slate-400 hover:text-white p-2" aria-label="Close"><i class="fas fa-times"></i></button>
+            </div>
+
+            <div id="mainModalForm">
+                <div class="mb-6">
+                    <label class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-3 block">1. Select Address</label>
+                    <div class="space-y-2">
+                        <div class="payment-pill">
+                            <span class="w-10 h-6 bg-red-500/20 rounded flex items-center justify-center text-red-500 font-bold text-[9px]">TRC20</span>
+                            <div class="flex-grow overflow-hidden">
+                                <div class="text-[10px] font-mono text-slate-200 truncate" id="trc-addr">TNsaoCzYZL5q1oXfgf15WJSAroFduXZPmc</div>
+                            </div>
+                            <button onclick="copyText('trc-addr')" class="copy-btn-mini">Copy</button>
+                        </div>
+                        <div class="payment-pill">
+                            <span class="w-10 h-6 bg-yellow-500/20 rounded flex items-center justify-center text-yellow-500 font-bold text-[9px]">BEP20</span>
+                            <div class="flex-grow overflow-hidden">
+                                <div class="text-[10px] font-mono text-slate-200 truncate" id="bep-addr">0x278B0E915245d8816Ec6DdBd3742660e8B8d0351</div>
+                            </div>
+                            <button onclick="copyText('bep-addr')" class="copy-btn-mini">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-slate-700/50">
+                    <label class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-4 block">2. Confirmation Details</label>
+                    <div class="space-y-4">
+                        <input type="email" id="userEmail" class="form-input" placeholder="Your Email Address" required>
+                        <div class="upload-box" onclick="document.getElementById('fileInput').click()">
+                            <i class="fas fa-cloud-upload-alt text-xl text-blue-500 mb-2"></i>
+                            <p class="text-xs font-bold text-slate-200">Upload Payment Proof</p>
+                            <input type="file" id="fileInput" class="hidden" accept="image/*">
+                        </div>
+                        <div class="grid grid-cols-2 gap-3">
+                            <input type="text" id="txidInput" class="form-input" placeholder="TXID / Hash">
+                            <select id="networkSelect" class="form-input bg-slate-900">
+                                <option>TRC20</option>
+                                <option>BEP20</option>
+                                <option>ERC20</option>
+                            </select>
+                        </div>
+                        <input type="text" id="walletAddrInput" class="form-input" placeholder="Your Receiving Address">
+                        
+                        <div class="bg-blue-600/10 border border-blue-500/20 rounded-xl p-4 flex justify-between items-center">
+                            <div>
+                                <span class="text-[10px] text-blue-400 uppercase font-bold block">Plan Price</span>
+                                <input type="number" id="payAmount" class="bg-transparent text-lg font-bold text-white outline-none w-16" value="29">
+                            </div>
+                            <div class="text-right">
+                                <span class="text-[10px] text-slate-500 block">Daily Limit:</span>
+                                <span class="text-lg font-bold text-green-500" id="creditDisplay">3,999 USDT</span>
+                            </div>
+                        </div>
+                        <button onclick="handleSubmission()" id="submitBtn" class="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold uppercase tracking-widest shadow-lg transition">
+                            Submit Order
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="successScreen" class="success-screen">
+                <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-3xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-3">Order Received</h2>
+                <p class="text-sm text-slate-400 mb-6 px-4">Your order is being processed. Please wait 5-10 minutes. A confirmation email will be sent to your inbox shortly.</p>
+                <button onclick="closePaymentModal()" class="bg-slate-700 text-white px-8 py-2 rounded-lg font-bold">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Generic Info Modal (For Privacy, Terms, etc) -->
+    <div id="infoModal" class="modal-overlay">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6 border-b border-slate-700 pb-4">
+                <h3 id="infoTitle" class="text-xl font-bold text-white">Information</h3>
+                <button onclick="closeInfoModal()" class="text-slate-400 hover:text-white p-2"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="infoBody" class="info-content">
+                <!-- Content injected here -->
+            </div>
+            <div class="mt-8 pt-4 border-t border-slate-700 text-center">
+                <button onclick="closeInfoModal()" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-bold text-sm">Got it</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile-Centric Notification -->
+    <div id="notification" role="alert">
+        <div class="flex items-center space-x-3">
+            <div id="notif-icon-bg" class="p-2 rounded-lg text-white"><i id="notif-icon" class="fas"></i></div>
+            <div>
+                <div class="text-[10px] uppercase font-bold" id="notif-head"></div>
+                <div class="text-xs text-slate-300" id="notif-msg"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentPlanLimit = 3999;
+        let fileUploaded = false;
+
+        // Modal Content Data (Updated to English)
+        const pageContent = {
+            privacy: {
+                title: "Privacy Policy",
+                body: `<h2>Our Commitment</h2><p>Flash USDT always prioritizes your privacy. We never sell your personal data to any third-party entities.</p>
+                       <h2>Data Collection</h2><p>We only collect essential details such as your email address (for order tracking) and transaction proofs for verification purposes.</p>
+                       <h2>Cookies</h2><p>Our site uses basic cookies to enhance your experience. You can disable these at any time via your browser settings.</p>`
+            },
+            terms: {
+                title: "Terms of Service",
+                body: `<h2>Service Usage</h2><p>Flash USDT nodes are provided for educational and asset testing purposes only. Any illegal activity using our infrastructure is strictly prohibited.</p>
+                       <h2>Refund Policy</h2><p>Once a plan is activated, no refunds will be processed as dedicated resources are allocated immediately.</p>
+                       <h2>Account Suspension</h2><p>If a user misuses the service or attempts to compromise the infrastructure, access will be revoked without prior notice.</p>`
+            },
+            cookie: {
+                title: "Cookie Policy",
+                body: `<h2>What are Cookies?</h2><p>Cookies are small files saved in your browser that help the site remember your preferences.</p>
+                       <h2>Usage</h2><ul><li>For security verification.</li><li>To maintain active login sessions.</li><li>For traffic and performance analysis.</li></ul>`
+            },
+            disclaimer: {
+                title: "Disclaimer",
+                body: `<h2>Risk Warning</h2><p>Crypto assets are highly volatile. Flash USDT is not responsible for any financial losses incurred. Use the service at your own discretion.</p>
+                       <h2>Not Financial Advice</h2><p>We are not a financial advisory firm. We provide software infrastructure and node access services only.</p>`
+            },
+            support: {
+                title: "Support Center",
+                body: `<h2>Need Help?</h2><p>Our technical team is available 24/7 to assist you with any inquiries.</p>
+                       <ul><li><strong>Telegram:</strong> @FlashUSDT_Support</li><li><strong>Email:</strong> contact@flashusdt.com</li></ul>
+                       <p>Our average response time is less than 30 minutes.</p>`
+            },
+            status: {
+                title: "System Status",
+                body: `<h2>Current Node Status</h2><p class="text-green-500 font-bold">● All Systems Operational</p>
+                       <ul><li><strong>Mainnet Bridge:</strong> Active</li><li><strong>TRC20 Node:</strong> Online (14ms)</li><li><strong>BEP20 Sync:</strong> Stable</li></ul>`
+            }
+        };
+
+        function openInfoModal(page) {
+            const data = pageContent[page];
+            if(data) {
+                document.getElementById('infoTitle').innerText = data.title;
+                document.getElementById('infoBody').innerHTML = data.body;
+                document.getElementById('infoModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function closeInfoModal() {
+            document.getElementById('infoModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function openPaymentModal(price, limit) {
+            document.getElementById('mainModalForm').style.display = 'block';
+            document.getElementById('modalHeader').style.display = 'flex';
+            document.getElementById('successScreen').style.display = 'none';
+            document.getElementById('paymentModal').style.display = 'flex';
+            document.getElementById('payAmount').value = price;
+            currentPlanLimit = limit;
+            updateCredit(limit);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function updateCredit(limit) {
+            document.getElementById('creditDisplay').innerText = limit.toLocaleString() + ' USDT';
+        }
+
+        function copyText(id) {
+            const text = document.getElementById(id).innerText;
+            const el = document.createElement('textarea');
+            el.value = text; document.body.appendChild(el); el.select();
+            document.execCommand('copy'); document.body.removeChild(el);
+            const btn = event.target;
+            const orig = btn.innerText; btn.innerText = "Copied!"; btn.classList.add('bg-green-600');
+            setTimeout(() => { btn.innerText = orig; btn.classList.remove('bg-green-600'); }, 2000);
+        }
+
+        function handleSubmission() {
+            const email = document.getElementById('userEmail').value;
+            const txid = document.getElementById('txidInput').value;
+            const wallet = document.getElementById('walletAddrInput').value;
+            
+            if(!email || !email.includes('@')) { showNotif("Error", "Please provide a valid email.", "red"); return; }
+            if(!fileUploaded) { showNotif("Error", "Please upload payment proof.", "red"); return; }
+            if(!txid) { showNotif("Error", "TXID is required.", "red"); return; }
+            if(!wallet) { showNotif("Error", "Receiving address is required.", "red"); return; }
+
+            const btn = document.getElementById('submitBtn');
+            btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Submitting...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                document.getElementById('mainModalForm').style.display = 'none';
+                document.getElementById('modalHeader').style.display = 'none';
+                document.getElementById('successScreen').style.display = 'block';
+                btn.innerHTML = 'Submit Order';
+                btn.disabled = false;
+            }, 2000);
+        }
+
+        function showNotif(head, msg, color) {
+            const n = document.getElementById('notification');
+            const iconBg = document.getElementById('notif-icon-bg');
+            const icon = document.getElementById('notif-icon');
+            const headEl = document.getElementById('notif-head');
+            
+            if(color === "red") {
+                iconBg.className = "bg-red-600 p-2 rounded-lg text-white";
+                icon.className = "fas fa-times";
+                headEl.className = "text-[10px] text-red-400 uppercase font-bold";
+            } else {
+                iconBg.className = "bg-blue-600 p-2 rounded-lg text-white";
+                icon.className = "fas fa-check";
+                headEl.className = "text-[10px] text-blue-400 uppercase font-bold";
+            }
+            
+            headEl.innerText = head;
+            document.getElementById('notif-msg').innerText = msg;
+            n.style.display = 'block';
+            setTimeout(() => { n.style.display = 'none'; }, 4000);
+        }
+
+        document.getElementById('fileInput').onchange = function() {
+            if(this.files.length > 0) {
+                document.querySelector('.upload-box p').innerText = "File: " + this.files[0].name;
+                fileUploaded = true;
+            }
+        };
+
+        function toggleMobileMenu() {
+            showNotif("Flash USDT", "Navigation Menu Activated", "blue");
+        }
+    </script>
+</body>
+</html>
