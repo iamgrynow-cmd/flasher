@@ -88,7 +88,6 @@
         .footer-link { color: #64748b; font-size: 0.75rem; transition: color 0.2s; cursor: pointer; }
         .footer-link:hover { color: #3b82f6; }
 
-        /* Custom Success Styling based on screenshot */
         .success-box {
             background: rgba(15, 23, 42, 0.4);
             border-radius: 16px;
@@ -107,6 +106,20 @@
         .step-icon {
             width: 18px;
             text-align: center;
+        }
+
+        /* Mobile Order Optimization */
+        @media (max-width: 768px) {
+            .main-container {
+                display: flex;
+                flex-direction: column;
+            }
+            .main-content {
+                order: 1; /* Hero and Pricing first on mobile */
+            }
+            .sidebar {
+                order: 2; /* Sidebar second on mobile */
+            }
         }
     </style>
 </head>
@@ -129,35 +142,10 @@
         </div>
     </header>
 
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row p-4 md:p-8 gap-8">
-        <!-- Sidebar -->
-        <aside class="md:w-1/3 lg:w-1/4 space-y-6">
-            <div class="crypto-card rounded-xl p-5">
-                <h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Node Connectivity</h3>
-                <div class="space-y-4 text-xs font-mono text-slate-400">
-                    <div class="flex justify-between"><span>Status</span> <span class="text-green-500 font-bold">● Operational</span></div>
-                    <div class="flex justify-between"><span>Network Load</span> <span class="text-blue-400">Minimal</span></div>
-                    <div class="flex justify-between"><span>Sync Delay</span> <span class="text-purple-400">0.002s</span></div>
-                </div>
-            </div>
-            
-            <div class="crypto-card rounded-xl p-6 info-content border-l-4 border-l-blue-500">
-                <h2 class="mt-0">Node Infrastructure</h2>
-                <p>Our infrastructure utilizes proprietary high-frequency nodes ensuring your Flash USDT assets bypass standard mempool delays for immediate wallet visibility.</p>
-                
-                <h2>Secure Protocol</h2>
-                <p>All transactions are handled through encrypted channels. We prioritize anonymity and transactional integrity across all supported mainnets.</p>
-                
-                <div class="pt-4 border-t border-slate-700/50 mt-4">
-                    <a href="https://t.me/Official_Flash_USDT" target="_blank" class="flex items-center text-[11px] text-blue-400 hover:underline">
-                        <i class="fab fa-telegram-plane mr-2"></i> Contact @Official_Flash_USDT
-                    </a>
-                </div>
-            </div>
-        </aside>
-
-        <!-- Main Content -->
-        <main class="md:w-2/3 lg:w-3/4">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row p-4 md:p-8 gap-8 main-container">
+        
+        <!-- Main Content (Now first on mobile) -->
+        <main class="md:w-2/3 lg:w-3/4 main-content">
             <section id="about" class="crypto-card rounded-2xl p-6 md:p-10 mb-8 relative overflow-hidden">
                 <div class="relative z-10">
                     <span class="bg-blue-900/50 text-blue-400 text-[10px] font-bold px-3 py-1 rounded-full border border-blue-500/30 mb-4 inline-block uppercase tracking-wider">High-Velocity Protocol</span>
@@ -224,28 +212,34 @@
                     <button onclick="openPaymentModal(111, 21000)" class="w-full py-3 rounded-lg bg-blue-600/10 text-blue-400 border border-blue-500/20 font-bold hover:bg-blue-600 hover:text-white transition uppercase text-[10px] tracking-widest">Select Plan</button>
                 </article>
             </section>
-
-            <!-- FAQ/Help Section -->
-            <section class="crypto-card rounded-2xl p-6 mb-12">
-                <h3 class="text-xl font-bold mb-6">Service FAQ</h3>
-                <div class="space-y-4">
-                    <details class="group border-b border-slate-700 pb-4">
-                        <summary class="list-none flex justify-between items-center cursor-pointer font-semibold text-sm">
-                            <span>Is this detectable by exchanges?</span>
-                            <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition"></i>
-                        </summary>
-                        <p class="text-xs text-slate-400 mt-2">Our proprietary node masking ensures all flash assets appear as standard confirmed transactions on the blockchain explorer.</p>
-                    </details>
-                    <details class="group border-b border-slate-700 pb-4">
-                        <summary class="list-none flex justify-between items-center cursor-pointer font-semibold text-sm">
-                            <span>How long does the activation take?</span>
-                            <i class="fas fa-chevron-down text-xs group-open:rotate-180 transition"></i>
-                        </summary>
-                        <p class="text-xs text-slate-400 mt-2">Activation is typically completed within 5-15 minutes of manual TXID verification by our team via Telegram.</p>
-                    </details>
-                </div>
-            </section>
         </main>
+
+        <!-- Sidebar -->
+        <aside class="md:w-1/3 lg:w-1/4 space-y-6 sidebar">
+            <div class="crypto-card rounded-xl p-5">
+                <h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">Node Connectivity</h3>
+                <div class="space-y-4 text-xs font-mono text-slate-400">
+                    <div class="flex justify-between"><span>Status</span> <span class="text-green-500 font-bold">● Operational</span></div>
+                    <div class="flex justify-between"><span>Network Load</span> <span class="text-blue-400">Minimal</span></div>
+                    <div class="flex justify-between"><span>Sync Delay</span> <span class="text-purple-400">0.002s</span></div>
+                </div>
+            </div>
+            
+            <div class="crypto-card rounded-xl p-6 info-content border-l-4 border-l-blue-500">
+                <h2 class="mt-0">Node Infrastructure</h2>
+                <p>Our infrastructure utilizes proprietary high-frequency nodes ensuring your Flash USDT assets bypass standard mempool delays for immediate wallet visibility.</p>
+                
+                <h2>Secure Protocol</h2>
+                <p>All transactions are handled through encrypted channels. We prioritize anonymity and transactional integrity across all supported mainnets.</p>
+                
+                <div class="pt-4 border-t border-slate-700/50 mt-4">
+                    <a href="https://t.me/Official_Flash_USDT" target="_blank" class="flex items-center text-[11px] text-blue-400 hover:underline">
+                        <i class="fab fa-telegram-plane mr-2"></i> Contact @Official_Flash_USDT
+                    </a>
+                </div>
+            </div>
+        </aside>
+
     </div>
 
     <!-- Footer -->
@@ -257,10 +251,9 @@
             </div>
             
             <div class="flex flex-wrap justify-center gap-6 mb-10">
-                <span class="footer-link" onclick="showInfoModal('Terms')">Terms of Service</span>
-                <span class="footer-link" onclick="showInfoModal('Privacy')">Privacy Policy</span>
-                <span class="footer-link" onclick="showInfoModal('Refund')">Refund Policy</span>
-                <span class="footer-link" onclick="showInfoModal('Disclaimer')">Risk Disclaimer</span>
+                <span class="footer-link" onclick="showNotif('TOS', 'Please read terms on our official channel.', 'blue')">Terms of Service</span>
+                <span class="footer-link" onclick="showNotif('Privacy', 'Your data is fully encrypted.', 'blue')">Privacy Policy</span>
+                <span class="footer-link" onclick="showNotif('Refund', 'All sales final for digital assets.', 'blue')">Refund Policy</span>
             </div>
 
             <p class="text-xs text-slate-500 mb-6 uppercase tracking-widest">Premium Blockchain Infrastructure &copy; 2025</p>
@@ -283,19 +276,16 @@
                 <div class="mb-6">
                     <label class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-3 block">1. Choose Deposit Network</label>
                     <div class="space-y-2">
-                        <!-- TRC20 -->
                         <div class="payment-pill">
                             <span class="w-10 h-6 bg-red-500/20 rounded flex items-center justify-center text-red-500 font-bold text-[9px]">TRC20</span>
                             <div class="flex-grow overflow-hidden"><div class="text-[10px] font-mono text-slate-200 truncate" id="trc-addr">TNsaoCzYZL5q1oXfgf15WJSAroFduXZPmc</div></div>
                             <button onclick="copyText('trc-addr')" class="copy-btn-mini">Copy</button>
                         </div>
-                        <!-- BEP20 -->
                         <div class="payment-pill">
                             <span class="w-10 h-6 bg-yellow-500/20 rounded flex items-center justify-center text-yellow-500 font-bold text-[9px]">BEP20</span>
                             <div class="flex-grow overflow-hidden"><div class="text-[10px] font-mono text-slate-200 truncate" id="bep-addr">0x278B0E915245d8816Ec6DdBd3742660e8B8d0351</div></div>
                             <button onclick="copyText('bep-addr')" class="copy-btn-mini">Copy</button>
                         </div>
-                        <!-- ERC20 -->
                         <div class="payment-pill">
                             <span class="w-10 h-6 bg-purple-500/20 rounded flex items-center justify-center text-purple-500 font-bold text-[9px]">ERC20</span>
                             <div class="flex-grow overflow-hidden"><div class="text-[10px] font-mono text-slate-200 truncate" id="erc-addr">0x278B0E915245d8816Ec6DdBd3742660e8B8d0351</div></div>
@@ -308,16 +298,14 @@
                     <label class="text-[10px] font-bold text-blue-400 uppercase tracking-widest mb-4 block">2. Confirmation Details</label>
                     <div class="space-y-4">
                         <div class="grid grid-cols-2 gap-3">
-                            <input type="text" id="userName" class="form-input" placeholder="Telegram Username">
+                            <input type="text" id="userName" class="form-input" placeholder="Telegram Username (Optional)">
                             <input type="email" id="userEmail" class="form-input" placeholder="Email (Optional)">
                         </div>
-                        
                         <div class="upload-box" onclick="document.getElementById('fileInput').click()">
                             <i class="fas fa-cloud-upload-alt text-xl text-blue-500 mb-2"></i>
                             <p class="text-xs font-bold text-slate-200" id="uploadStatus">Upload Payment Receipt</p>
                             <input type="file" id="fileInput" class="hidden" accept="image/*">
                         </div>
-
                         <div class="grid grid-cols-2 gap-3">
                             <input type="text" id="txidInput" class="form-input" placeholder="TXID Hash">
                             <select id="networkSelect" class="form-input bg-slate-900">
@@ -326,7 +314,6 @@
                                 <option>ERC20</option>
                             </select>
                         </div>
-
                         <input type="text" id="walletAddrInput" class="form-input" placeholder="Your Receiving Wallet Address">
                         
                         <div class="bg-blue-600/10 border border-blue-500/20 rounded-xl p-4 flex justify-between items-center">
@@ -344,6 +331,7 @@
                 </div>
             </div>
 
+            <!-- Success Screen -->
             <div id="successScreen" class="success-screen">
                 <div class="w-16 h-16 bg-green-500/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
                     <i class="fas fa-check text-2xl"></i>
@@ -415,7 +403,7 @@
             const wallet = document.getElementById('walletAddrInput').value;
             
             if(!fileUploaded) { showNotif("Warning", "Proof of payment required.", "red"); return; }
-            if(!txid || !wallet) { showNotif("Warning", "All fields are required.", "red"); return; }
+            if(!txid || !wallet) { showNotif("Warning", "Wallet address and TXID are required.", "red"); return; }
 
             const btn = document.getElementById('submitBtn');
             btn.innerHTML = '<i class="fas fa-circle-notch fa-spin mr-2"></i> Initializing Node...';
@@ -446,7 +434,7 @@
         };
 
         function toggleMobileMenu() {
-            showNotif("Navigation", "Scroll down to see our packages.", "blue");
+            window.scrollTo({ top: document.getElementById('pricing').offsetTop - 100, behavior: 'smooth' });
         }
     </script>
 </body>
